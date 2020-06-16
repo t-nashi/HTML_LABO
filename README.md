@@ -1,2 +1,2 @@
-# HTML---Starter-Template
+# HTML_Starter-Template
 初期htmlまとめ
