@@ -1,0 +1,15 @@
+.container {
+  background-color: #ddd;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+#lottie {
+  width: 50%;
+  cursor: pointer;
+  background-color: #fff;
+}

@@ -1,0 +1,53 @@
+@charset "UTF-8";
+body,
+html {
+  height: 100%;
+  margin: 0 auto;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+
+/*固定する背景*/
+.box {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #FFF;
+  font-size: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  padding: 5%;
+}
+
+.parallax-bg {
+  background-image: url("https://images.unsplash.com/photo-1491466424936-e304919aada7");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*スクロールするコンテンツ*/
+.scrollbox {
+  background-color: #111;
+}
+
+.reference {
+  font-size: 32px;
+}
+
+.reference .title {
+  text-align: center;
+}
+
+.reference ul {
+  margin-top: 32px;
+}
+/*# sourceMappingURL=style.css.map */
