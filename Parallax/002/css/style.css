@@ -1,0 +1,69 @@
+@charset "UTF-8";
+body,
+html {
+  height: 100%;
+  margin: 0 auto;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+
+/*固定する背景*/
+.box {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #FFF;
+  font-size: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  padding: 5%;
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 30%;
+}
+
+.bg-img1 {
+  background-image: url("https://images.unsplash.com/photo-1548678756-aa5ed92c4796?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+}
+
+.bg-img2 {
+  background-image: url("https://images.unsplash.com/photo-1465628976988-fe43bda15798?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80");
+}
+
+/*スクロールするコンテンツ*/
+.scrollbox1 {
+  background-color: #111;
+}
+
+.scrollbox2 {
+  background-color: #8a2121;
+}
+
+.scrollbox3 {
+  background-color: #406615;
+}
+
+.reference {
+  font-size: 32px;
+}
+
+.reference .title {
+  text-align: center;
+}
+
+.reference ul {
+  margin-top: 32px;
+}
+/*# sourceMappingURL=style.css.map */
