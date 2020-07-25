@@ -1,0 +1,33 @@
+div {
+  border: 1.5px solid #eb6101;
+}
+#container {
+  width: 450px;
+  display: grid;
+  grid-template-rows: 150px 150px 150px 150px;
+  grid-template-columns: 150px 1fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "nav main1 aside"
+    "nav main2 aside"
+    "footer footer footer";
+  // grid-gap: 5px;  // 5pxの余白を設定
+}
+.header {
+  grid-area: header;
+}
+.main1 {
+  grid-area: main1;
+}
+.main2 {
+  grid-area: main2;
+}
+.nav {
+  grid-area: nav;
+}
+.aside {
+  grid-area: aside;
+}
+.footer {
+  grid-area: footer;
+}

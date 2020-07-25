@@ -1,0 +1,22 @@
+body {
+  margin: 20px;
+}
+#container {
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  grid-template-columns: repeat(3, 150px);
+  grid-template-areas: "grid1 grid1 grid2"
+                       "grid3 grid3 grid2";
+}
+.grid1 {
+  grid-area: grid1;
+  background-color: #FF69A3;
+}
+.grid2 {
+  grid-area: grid2;
+  background-color: #75A9FF;
+}
+.grid3 {
+  grid-area: grid3;
+  background-color: #D0FF43;
+}

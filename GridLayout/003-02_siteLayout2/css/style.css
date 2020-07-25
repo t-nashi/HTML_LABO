@@ -1,0 +1,126 @@
+@charset "UTF-8";
+/* 見た目調整 */
+body {
+  /* フォントの種類を指定 */
+  font-family: -apple-system, BlinkMacSystemFont, 游ゴシック, "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+  /* 字間(プロポーショナルメトリクス)を指定 */
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+}
+
+.container {
+  color: #ecf0f1;
+  font-size: 2.0rem;
+}
+
+.container > * {
+  padding: 10px;
+}
+
+.header {
+  background-color: #2ecc71;
+}
+
+.main {
+  background-color: #3498db;
+  height: 300px;
+}
+
+.aside {
+  background-color: #f1c40f;
+}
+
+.nav {
+  background-color: #e74c3c;
+}
+
+.footer {
+  background-color: #9b59b6;
+}
+
+/* ====================
+  グリッドコンテナ
+==================== */
+.container {
+  display: grid;
+  /* 1列目から順番に180px、1fr、160pxの幅 */
+  grid-template-columns: 180px 1fr 160px;
+  /* 1行目から順番に行の高さを60px 1fr 90pxにする */
+  grid-template-rows: 60px 1fr 90px;
+  /* IE/Edge用 */
+  display: -ms-grid;
+  -ms-grid-columns: 180px 1fr 160px;
+  -ms-grid-rows: 60px 1fr 90px;
+}
+
+/* ====================
+  グリッドアイテム
+==================== */
+.header {
+  /* 列の1本目から4本目のグリッドラインまで */
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  /* 行の1本目から2本目のグリッドラインまで */
+  -ms-grid-row: 1;
+  grid-row: 1;
+  /* IE/Edge用 */
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  -ms-grid-row: 1;
+}
+
+.main {
+  /* 列の2本目から3本目のグリッドラインまで */
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  /* 行の2本目から3本目のグリッドラインまで */
+  -ms-grid-row: 2;
+  grid-row: 2;
+  /* IE/Edge用 (main要素はIEで未サポートのため、display:block を指定) */
+  display: block;
+  -ms-grid-column: 2;
+  -ms-grid-row: 2;
+}
+
+.aside {
+  /* 列の2本目から3本目のグリッドラインまで */
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  /* 行の2本目から3本目のグリッドラインまで */
+  -ms-grid-row: 2;
+  grid-row: 2;
+  /* IE/Edge用 */
+  -ms-grid-column: 1;
+  -ms-grid-row: 2;
+}
+
+.nav {
+  /* 列の3本目から4本目のグリッドラインまで */
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+  /* 行の2本目から3本目のグリッドラインまで */
+  -ms-grid-row: 2;
+  grid-row: 2;
+  /* IE/Edge用 */
+  -ms-grid-column: 3;
+  -ms-grid-row: 2;
+}
+
+.footer {
+  /* 列の1本目から4本目のグリッドラインまで */
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  /* 行の2本目から3本目のグリッドラインまで */
+  -ms-grid-row: 3;
+  grid-row: 3;
+  /* IE/Edge用 */
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  -ms-grid-row: 3;
+}
+/*# sourceMappingURL=style.css.map */
