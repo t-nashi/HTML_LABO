@@ -1,0 +1,16 @@
+$color_active: #f00;
+
+body {
+  margin: 20px;
+}
+.menu {
+  .is-active {
+    color: $color_active;
+    a {
+      &:link { color: $color_active; }     // 未訪問のリンクの色
+      &:visited { color: $color_active; }  // 訪問済みのリンクの色
+      &:hover { color: $color_active; }    // カーソルが乗っているリンクの色
+      &:active { color: $color_active; }   // クリック中のリンクの色
+    }
+  }
+}

@@ -1,0 +1,24 @@
+body {
+  margin: 20px;
+}
+
+.menu .is-active {
+  color: #f00;
+}
+
+.menu .is-active a:link {
+  color: #f00;
+}
+
+.menu .is-active a:visited {
+  color: #f00;
+}
+
+.menu .is-active a:hover {
+  color: #f00;
+}
+
+.menu .is-active a:active {
+  color: #f00;
+}
+/*# sourceMappingURL=style.css.map */
