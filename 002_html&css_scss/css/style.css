@@ -1,5 +1,10 @@
 body {
-  margin: 20px;
+  padding: 20px;
+  font: 16px/1.4 sans-serif;
+}
+
+ul, ol {
+  margin-left: 24px;
 }
 
 .title {
