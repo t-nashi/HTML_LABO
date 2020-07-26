@@ -1,0 +1,50 @@
+body {
+  padding: 20px;
+  font: 16px/1.4 sans-serif;
+}
+
+ul, ol {
+  margin-left: 24px;
+}
+
+button {
+  font-size: 1.25rem;
+  padding: 10px;
+  background: #0bd;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background: #0090aa;
+}
+
+.panel {
+  background: #eee;
+  padding: 18px;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+/* Animation */
+.slide-enter-active, .slide-leave-active {
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.slide-enter, .slide-leave-to {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  opacity: 0;
+}
+
+section {
+  margin-top: 12px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+/*# sourceMappingURL=style.css.map */

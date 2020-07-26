@@ -5,7 +5,12 @@
 new Vue({
   el: "#app",
   data: {
-    activetab: 1
+    toggleFlag: false,
+  },
+  methods: {
+    tapButton() {
+      this.toggleFlag = !this.toggleFlag;
+    },
   },
 });
 

@@ -19,6 +19,36 @@ p {
   margin: 0.5em;
 }
 
+@-webkit-keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
 .tab {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,10 +73,19 @@ p {
   background-color: #f7c9c9;
 }
 
-.content-vue {
+.content {
+  position: relative;
   border: 2px solid #ccc;
   padding: 10px;
-  overflow: hidden;
-  position: relative;
+}
+
+.content section {
+  display: none;
+  -webkit-animation: fade-in .8s;
+          animation: fade-in .8s;
+}
+
+.content section.active {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

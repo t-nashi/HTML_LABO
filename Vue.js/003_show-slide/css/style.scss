@@ -1,0 +1,45 @@
+body {
+  padding: 20px;
+  font: 16px/1.4 sans-serif;
+}
+ul, ol {
+  margin-left: 24px;
+}
+
+button {
+  font-size: 1.25rem;
+  padding: 10px;
+  background: #0bd;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    background: #0090aa;
+  }
+}
+
+.panel {
+  background: #eee;
+  padding: 18px;
+  transform-origin: 0 0;
+}
+
+/* Animation */
+.slide-enter-active, .slide-leave-active {
+  transition: .5s;
+}
+.slide-enter, .slide-leave-to {
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+
+section {
+  margin-top: 12px;
+}
+.mt-24 {
+  margin-top: 24px;
+}
+
+

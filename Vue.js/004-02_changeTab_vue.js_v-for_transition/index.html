@@ -12,26 +12,21 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Vue.js - htmlソースべた書き、vueシンプル</h1>
+    <h1>Vue.js</h1>
     <section class="mt-12">
       <div id="app">
-        <div id="tabs" class="container">
-          <ul class="tab">
-              <li @click="activetab=1" @keyup.enter="activetab=1" :class="[activetab===1 ? 'active' : '']" tabindex="0">タブ01</li>
-              <li @click="activetab=2" @keyup.enter="activetab=2" :class="[activetab===2 ? 'active' : '']" tabindex="0">タブ02</li>
-              <li @click="activetab=3" @keyup.enter="activetab=3" :class="[activetab===3 ? 'active' : '']" tabindex="0">タブ03</li>
-          </ul>
-          <div class="content-vue">
-            <div v-show="activetab===1" class="tabcontent">
-              コンテンツ01
-            </div>
-            <div v-show="activetab===2" class="tabcontent">
-              コンテンツ02
-            </div>
-            <div v-show="activetab===3" class="tabcontent">
-              コンテンツ03
-            </div>
-          </div>
+        <ul class="tab">
+          <li v-for="item in list" 
+              @click="changeTab(item.id)" 
+              @keyup.enter="changeTab(item.id)" 
+              :class="{active:active(item.id)}" tabindex="0">{{ item.label }}</li>
+        </ul>
+        <div class="content-vue">
+          <transition>
+            <section v-for="item in list" :key="item.id" v-if="active(item.id)">
+              <p>{{ item.content }}</p>
+            </section>
+          </transition>
         </div>
       </div>
     </section>
@@ -39,8 +34,6 @@
     <h2 class="title mt-24">参考</h2>
     <section class="mt-12">
       <ul class="link">
-        <li><a href="https://qiita.com/g-taguchi/items/9f97f2172aa048934f1c#vuejs%E3%81%AE%E5%A0%B4%E5%90%88-1">jQueryでよく使う動きをVue.jsでやってみる - Qiita</a></li>
-        <li><a href="https://jp.vuejs.org/v2/guide/transitions.html">Enter/Leave とトランジション一覧 — Vue.js</a></li>
         <li><a href="https://qiita.com/mio3io/items/e7b2596d06b8005e8e6f#%E8%A1%A8%E7%A4%BA%E9%9D%9E%E8%A1%A8%E7%A4%BA%E3%81%AE%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E3%81%A8%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">jQuery から Vue.js へのステップアップ - Qiita</a></li>
         <li><a href="https://codepen.io/mio3io/pen/xWrWbw">Qiita用</a></li>
       </ul>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+    <!-- Vue.jsの開発バージョン、便利なコンソールの警告が含まれています -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <input
+        type="button"
+        value="BUTTON"
+        class="btn-toggle"
+        @click="tapButton()"
+        :class="{'is-active': toggleFlag}"
+      />
+    </div>
+
+    <h2 class="title mt-24">参考</h2>
+    <section class="mt-12">
+      <ul class="link">
+        <li><a href="https://qiita.com/isihigameKoudai/items/6718237cd8a971442e2d#6-v-bind%E3%81%A7%E3%81%AE%E3%83%90%E3%82%A4%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0">Vue.js 入門 （htmlベースで基本機能を知ろう編） - Qiita</a></li>
+      </ul>
+    </section>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

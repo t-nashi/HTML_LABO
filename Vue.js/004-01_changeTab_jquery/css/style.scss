@@ -16,6 +16,21 @@ p {
   margin: 0.5em;
 }
 
+@keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
 .tab {
   display: flex;
   margin: 0;
@@ -34,9 +49,15 @@ p {
   }
 }
 
-.content-vue {
+.content {
+  position: relative;
   border: 2px solid #ccc;
   padding: 10px;
-  overflow: hidden;
-  position: relative;
+  section {
+    display: none;
+    animation: fade-in .8s;
+    &.active {
+      display: block;
+    }
+  }
 }
