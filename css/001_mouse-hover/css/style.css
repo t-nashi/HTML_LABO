@@ -1,0 +1,84 @@
+body {
+  padding: 20px;
+  font: 16px/1.4 sans-serif;
+}
+
+ul,
+ol {
+  margin-left: 24px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+/* [1] The container */
+.img-hover-zoom {
+  width: 300px;
+  height: 300px;
+  /* [1.1] Set it as per your need */
+  overflow: hidden;
+  /* [1.2] Hide the overflowing of child elements */
+  position: relative;
+  cursor: pointer;
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+  width: 100%;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+/* Quick-zoom Container */
+.img-hover-zoom--quick-zoom img {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transition: visibility .25s ease-in, -webkit-transform .25s;
+  transition: visibility .25s ease-in, -webkit-transform .25s;
+  transition: transform .25s, visibility .25s ease-in;
+  transition: transform .25s, visibility .25s ease-in, -webkit-transform .25s;
+}
+
+/* The Transformation */
+.img-hover-zoom--quick-zoom:hover img {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.img_wrap {
+  border: 1px solid #ddd;
+  width: 300px;
+  height: 226px;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.img_wrap img {
+  width: 100%;
+  -webkit-transition: -webkit-transform .2s ease;
+  transition: -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease, -webkit-transform .2s ease;
+}
+
+.img_wrap:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+/*# sourceMappingURL=style.css.map */

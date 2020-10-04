@@ -1,0 +1,101 @@
+body {
+  padding: 20px;
+  font: 16px/1.4 sans-serif;
+}
+ul,
+ol {
+  margin-left: 24px;
+}
+
+.title {
+  font-size: 24px;
+}
+// .img_wrap {
+//   border: 1px solid #ddd;
+//   width: 300px;
+//   height: 226px;
+//   margin: 0 auto;
+//   overflow: hidden;
+//   cursor: pointer;
+//   img {
+//     width: 100%;
+//     transition-duration: 0.1s;
+//   }
+//   &:hover img {
+//     transform: scale(1.2);
+//     transition-duration: 0.1s;
+//   }
+// }
+
+
+/* [1] The container */
+.img-hover-zoom {
+  width: 300px;
+  height: 300px; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+  position: relative;
+  cursor: pointer;
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform .5s ease;
+  width: 100%;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // width: 100%;
+  // height: auto;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  transform: scale(1.5);
+  transition-duration: 0.5s;
+}
+
+
+
+/* Quick-zoom Container */
+.img-hover-zoom--quick-zoom img {
+  transform-origin: 0 0;
+  transition: transform .25s, visibility .25s ease-in;
+}
+
+/* The Transformation */
+.img-hover-zoom--quick-zoom:hover img {
+  transform: scale(2);
+}
+
+
+.img_wrap{
+  border: 1px solid #ddd;
+  width: 300px;
+  height: 226px;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+.img_wrap img{
+  width: 100%;
+  // transition-duration: 0.5s;
+  transition: transform .2s ease;
+}
+.img_wrap:hover img{
+  transform: scale(1.2);
+  // transition-duration: .2s;
+  transition: transform .5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
