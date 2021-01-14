@@ -44,6 +44,9 @@
 ###### JavaScript
 * [GitHub - -memo/JavaScript.txt at master · t-nashi/-memo](https://github.com/t-nashi/-memo/blob/master/JavaScript.txt)
 * [koreyome.com - JavaScript Memo](https://www.koreyome.com/labo/contents/js/memo/index.html)
+###### Vue.js | Nuxt.js
+* [GitHub - -memo/JS___Vue.js.md at master · t-nashi/-memo](https://github.com/t-nashi/-memo/blob/master/JS___Vue.js.md)
+* [GitHub - -memo/JS___Vue.js_Nuxt_Docker.md at master · t-nashi/-memo](https://github.com/t-nashi/-memo/blob/master/JS___Vue.js_Nuxt_Docker.md)
 
 
 <br>
