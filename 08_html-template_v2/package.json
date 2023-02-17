@@ -1,0 +1,16 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postcss": "postcss css/**/*.css --dir css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.1"
+  }
+}
