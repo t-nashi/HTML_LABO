@@ -1,0 +1,393 @@
+@charset 'utf-8';
+
+// ==========================================================================
+// COLOR
+// ==========================================================================
+// colors - theme
+$color-primary: #F61C81;
+$color-primary-light: #FF6CA7;
+$color-primary-dark: #BA1356;
+$color-secondary: #FF215D;
+$color-secondary-light: lighten($color-secondary, 10%);
+$color-secondary-dark: #B83232;
+$color-blue: #33A3F0;
+$color-blue-light: #33C3F0;
+$color-blue-dark: #327EB8;
+$color-black: #000000;
+$color-gray: #DDD;
+$color-gray-light-1: lighten($color-gray, 10%);
+$color-gray-light-2: lighten($color-gray, 20%);
+$color-gray-dark-1: darken($color-gray, 10%);
+$color-gray-dark-2: darken($color-gray, 20%);
+$color-white: #FFFFFF;
+$color-yellow: #FFF855;
+$color-text: #111;
+$color-text-light: lighten($color-text, 20%);
+$color-text-dark: darken($color-text, 20%);
+$color-border: #DDD;
+$color-border-light: lighten($color-border, 10%);
+$color-border-dark: darken($color-border, 20%);
+
+$color-bg-wrapper: $color-white;
+
+// colors - target
+$color-text-link: $color-text;
+$color-text-hover: $color-text;
+$color-text-visited: $color-text;
+$color-text-attention: $color-secondary;
+$color-text-gray: #828282;
+
+$color-text-selection: lighten($color-primary, 40%);
+
+// ==========================================================================
+// BREAKPOINT
+// ==========================================================================
+$breakpoint-width-ss: 340px;
+$breakpoint-width-sg: 360px;
+$breakpoint-width-sm: 576px;
+$breakpoint-width-md: 768px;
+$breakpoint-width-lg: 992px;
+$breakpoint-width-xl: 1200px;
+$breakpoint-width-xxl: 1400px;
+
+$breakpoint-up: (
+  'ss': 'screen and (min-width: #{$breakpoint-width-ss})',
+  'sg': 'screen and (min-width: #{$breakpoint-width-sg})',
+  'sm': 'screen and (min-width: #{$breakpoint-width-sm})',
+  'md': 'screen and (min-width: #{$breakpoint-width-md})',
+  'lg': 'screen and (min-width: #{$breakpoint-width-lg})',
+  'xl': 'screen and (min-width: #{$breakpoint-width-xl})',
+  'xxl': 'screen and (min-width: #{$breakpoint-width-xxl})',
+) !default;
+
+// ==========================================================================
+// MIXINS
+// ==========================================================================
+// breakpoint-up
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+// テキストリンク
+@mixin link-colors() {
+  color: $color-text-link;
+  // text-decoration: none;
+  outline: none;
+  &:hover {
+    text-decoration: underline;
+    color: $color-text-hover;
+  }
+  &:visited {
+    color: $color-text-visited;
+  }
+}
+// 左右中心へ寄せる
+@mixin mx-auto() {
+  margin-left: auto;
+  margin-right: auto;
+}
+// flexで縦横中心へ寄せる
+@mixin flex-vh-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ==========================================================================
+// RESET
+// ==========================================================================
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a:focus { outline:none; }
+.both{ clear:both; }
+.inline-block { display: inline-block; *display: inline; *zoom: 1; }
+
+// set html5 elements to block
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+// box-sizing - paddingやborderに依存しないwidthやheight指定
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+img {
+  vertical-align: bottom;
+}
+
+// ==========================================================================
+// GENERAL SETTING
+// ==========================================================================
+html {
+  font-size: 62.5%; // 10px = 1rem
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+  font-weight: bold;
+  color: $color-text;
+  background-color: $color-bg-wrapper;
+  width: 100%;
+  height: 100vh;
+
+  // フォントサイズ
+  font-size: 1.6rem;
+  small { font-size: 1.4rem; }
+  .text-small { font-size: 1.4rem; }
+  .text-big { font-size: 1.8rem; }
+  .text-big-2 { font-size: 2.4rem; }
+  .text-big-3 { font-size: 3.0rem; }
+  @include mq-up(xl) {
+    font-size: 3.6rem;
+    small { font-size: 2.4rem; }
+    .text-small { font-size: 2.4rem; }
+    .text-big { font-size: 4.0rem; }
+    .text-big-2 { font-size: 4.8rem; }
+    .text-big-3 { font-size: 8.0rem; }
+  }
+}
+
+a {
+  @include link-colors();
+  &:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "alpha(opacity=70)";
+  }
+}
+.motion-hover {
+  &:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "alpha(opacity=70)";
+  }
+}
+
+b { font-weight: bold; }
+
+small { font-size: small; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+// Selected Text
+::selection { background: $color-text-selection; } // Safari
+::-moz-selection { background: $color-text-selection; } // Firefox
+
+// ==========================================================================
+// STYLES
+// ==========================================================================
+
+// 共通
+// ──────────
+.d-none {
+  display: none !important;
+}
+.w-100 {
+  width: 100%;
+}
+
+.border-1 {
+  border: 1px solid $color-border;
+}
+
+.box-sizing {
+  box-sizing: border-box; // paddingとborderサイズを加味したwidth/heightにする
+}
+
+.border-top-0 { border-top: none; }
+.border-right-0 { border-right: none; }
+.border-bottom-0 { border-bottom: none; }
+.border-left-0 { border-left: none; }
+
+.mt-0 { margin-top: 0px; }
+.mr-0 { margin-right: 0px; }
+.mb-0 { margin-bottom: 0px; }
+.ml-0 { margin-left: 0px; }
+
+.pt-0 { padding-top: 0px; }
+.pr-0 { padding-right: 0px; }
+.pb-0 { padding-bottom: 0px; }
+.pl-0 { padding-left: 0px; }
+
+.video {
+  iframe {
+    width: 100%;
+    height: 240px;
+    @include mq-up(xl) {
+      height: 560px;
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// [px] padding, margin
+@for $i from 0 through 12 {
+  $j: ($i*5);
+  .pt-#{$j} { padding-top: #{$j}px !important; }
+  .pb-#{$j} { padding-bottom: #{$j}px !important; }
+  .pl-#{$j} { padding-left: #{$j}px !important; }
+  .pr-#{$j} { padding-right: #{$j}px !important; }
+  .mt-#{$j} { margin-top: #{$j}px !important; }
+  .mb-#{$j} { margin-bottom: #{$j}px !important; }
+  .ml-#{$j} { margin-left: #{$j}px !important; }
+  .mr-#{$j} { margin-right: #{$j}px !important; }
+}
+
+// [em] padding, margin
+@for $i from 1 through 5 {
+  .pt-#{$i}em { padding-top: #{$i}em !important; }
+  .pb-#{$i}em { padding-bottom: #{$i}em !important; }
+  .pl-#{$i}em { padding-left: #{$i}em !important; }
+  .pr-#{$i}em { padding-right: #{$i}em !important; }
+  .mt-#{$i}em { margin-top: #{$i}em !important; }
+  .mb-#{$i}em { margin-bottom: #{$i}em !important; }
+  .ml-#{$i}em { margin-left: #{$i}em !important; }
+  .mr-#{$i}em { margin-right: #{$i}em !important; }
+}
+
+.mt-auto { margin-top: auto !important; }
+.mr-auto { margin-right: auto !important; }
+.mb-auto { margin-bottom: auto !important; }
+.ml-auto { margin-left: auto !important; }
+
+.pt-point5em {
+  padding-left: .5em;
+}
+.pt-1-6em {
+  padding-top: 1.6em;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-yellow {
+  color: $color-yellow;
+}
+.text-attention {
+  color: $color-text-attention;
+}
+.text-gray {
+  color: $color-text-gray;
+}
+.text-italic {
+  font-style: italic;
+}
+.text-decoration-none {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.line-height-1 {
+  line-height: 1;
+}
+.leading-3 { line-height: .75rem; }
+.leading-4 { line-height: 1rem; }
+.leading-5 { line-height: 1.25rem; }
+.leading-6 { line-height: 1.5rem; }
+.leading-7 { line-height: 1.75rem; }
+.leading-8 { line-height: 2rem; }
+.leading-9 { line-height: 2.25rem; }
+.leading-10 { line-height: 2.5rem; }
+.leading-none { line-height: 1; }
+.leading-tight { line-height: 1.25; }
+.leading-snug { line-height: 1.375; }
+.leading-normal { line-height: 1.5; }
+.leading-relaxed { line-height: 1.625; }
+.leading-loose { line-height: 2; }
+
+.color-primary {
+  color: $color-primary !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+.bg-color-inherit {
+  background-color: inherit !important;
+}
+
+.type-disc {
+  list-style-type: disc;
+  padding-left: 12px;
+  @include mq-up(xl) {
+    padding-left: 38px;
+  }
+  li + li {
+    margin-top: .8em;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+.d-block {
+  display: block;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-align-center {
+  align-items: center;
+  justify-content: center;
+}
+.d-none-up-sm {
+  @include mq-up(sm) {
+    display: none !important;
+  }
+}
+.d-show-up-sm {
+  display: none !important;
+  @include mq-up(sm) {
+    display: flex !important;
+  }
+}
+.flex-direction-column {
+  flex-direction: column;
+}
+
+// メイン
+// ──────────

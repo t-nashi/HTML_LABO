@@ -1,0 +1,38 @@
+// ==========================================================================
+// COLOR
+// ==========================================================================
+// colors - theme
+$color-primary: #F61C81;
+$color-primary-light: #FF6CA7;
+$color-primary-dark: #BA1356;
+$color-secondary: #FF215D;
+$color-secondary-light: lighten($color-secondary, 10%);
+$color-secondary-dark: #B83232;
+$color-blue: #33A3F0;
+$color-blue-light: #33C3F0;
+$color-blue-dark: #327EB8;
+$color-black: #000000;
+$color-gray: #DDD;
+$color-gray-light-1: lighten($color-gray, 10%);
+$color-gray-light-2: lighten($color-gray, 20%);
+$color-gray-dark-1: darken($color-gray, 10%);
+$color-gray-dark-2: darken($color-gray, 20%);
+$color-white: #FFFFFF;
+$color-yellow: #FFF855;
+$color-text: #111;
+$color-text-light: lighten($color-text, 20%);
+$color-text-dark: darken($color-text, 20%);
+$color-border: #DDD;
+$color-border-light: lighten($color-border, 10%);
+$color-border-dark: darken($color-border, 20%);
+
+$color-bg-wrapper: $color-white;
+
+// colors - target
+$color-text-link: $color-text;
+$color-text-hover: $color-text;
+$color-text-visited: $color-text;
+$color-text-attention: $color-secondary;
+$color-text-gray: #828282;
+
+$color-text-selection: lighten($color-primary, 40%);

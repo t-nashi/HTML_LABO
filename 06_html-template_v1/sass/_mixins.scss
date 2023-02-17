@@ -1,0 +1,70 @@
+// ==========================================================================
+// MIXINS
+// ==========================================================================
+// breakpoint定義（参考-bootstrap5： https://getbootstrap.jp/docs/5.0/layout/breakpoints/）
+$breakpoint-width-ss: 340px;
+$breakpoint-width-sg: 360px;
+$breakpoint-width-sm: 576px; // Small
+$breakpoint-width-md: 768px; // Medium
+$breakpoint-width-lg: 992px; // Large
+$breakpoint-width-xl: 1200px; // Extra large
+$breakpoint-width-xxl: 1400px; // Extra extra large
+$breakpoint-up: (
+  'ss': 'screen and (min-width: #{$breakpoint-width-ss})',
+  'sg': 'screen and (min-width: #{$breakpoint-width-sg})',
+  'sm': 'screen and (min-width: #{$breakpoint-width-sm})',
+  'md': 'screen and (min-width: #{$breakpoint-width-md})',
+  'lg': 'screen and (min-width: #{$breakpoint-width-lg})',
+  'xl': 'screen and (min-width: #{$breakpoint-width-xl})',
+  'xxl': 'screen and (min-width: #{$breakpoint-width-xxl})',
+) !default;
+// breakpoint-up（モバイルファースト）（参考： https://www.tam-tam.co.jp/tipsnote/html_css/post10708.html）
+// - 例： @include mq-up(xl) {} => @media screen and (min-width: 1200px) {}
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+// 指定したclassを$breakpoint-up設定分定義する
+@mixin responsive($class, $class2: false, $bp: $breakpoint-up) {
+  @if $class2 {
+    $class2: '-#{$class2}';
+  } @else {
+    $class2: null;
+  }
+  // 標準（例： mt-3）
+  #{$class}#{$class2} {
+    @content;
+  }
+  // ブレイクポイント入り（例： mt-xl-3）
+  @each $suffix, $value in $bp {
+    @media #{$value} {
+      #{$class}-#{$suffix}#{$class2} {
+        @content;
+      }
+    }
+  }
+}
+// テキストリンク
+@mixin link-colors() {
+  color: $color-text-link;
+  outline: none;
+  &:hover {
+    text-decoration: underline;
+    color: $color-text-hover;
+  }
+  &:visited {
+    color: $color-text-visited;
+  }
+}
+// 左右中心へ寄せる
+@mixin mx-auto() {
+  margin-left: auto;
+  margin-right: auto;
+}
+// flexで縦横中心へ寄せる
+@mixin flex-vh-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

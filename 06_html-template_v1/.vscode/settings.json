@@ -1,0 +1,25 @@
+{
+  // .mapの生成有無
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.formats": [
+    // コンパイル結果が確認しやすいフォーマット
+    {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "/css/"
+    },
+    // 軽量化した読み込み用フォーマット
+    {
+        "format": "compressed",
+        "extensionName": ".min.css",
+        "savePath": "/css/"
+    }
+  ],
+  "liveSassCompile.settings.autoprefix": [
+    "> 1% in JP",
+    "last 2 versions"
+  ],
+  "liveSassCompile.settings.includeItems": [
+    "**/sass/style.scss"
+  ]
+}

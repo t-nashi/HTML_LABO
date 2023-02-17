@@ -1,0 +1,30 @@
+▼ 仕様メモ
+
+・Live Sass Compilerの設定は「.vscode/settings.json」で行う
+・map生成は初期off
+・読み込む対象のsassファイルは「./sass/style.scss」に設定
+
+・未使用CSS削除は「npm run postcss」で行う（purgecss）
+※「npm i」でモジュールのインストールが必要
+
+
+
+◆Download · Bootstrap v4.6
+https://getbootstrap.com/docs/4.6/getting-started/download/
+
+◆Download · Bootstrap v5.0
+https://getbootstrap.com/docs/5.0/getting-started/download/
+
+◆Download · Bootstrap v5.1
+https://getbootstrap.com/docs/5.1/getting-started/download/
+
+
+
+◆Installation - Tailwind CSS
+https://tailwindcss.com/docs/installation
+
+◆TailwindCSSを初めてインストールするときのメモ - Qiita
+https://qiita.com/Masahiro111/items/62a4927be42a8c06bc79#%E3%82%B1%E3%83%BC%E3%82%B9cdn%E7%B5%8C%E7%94%B1%E3%81%A7tailwind%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80
+
+◆利用者爆増中 初めてでもわかるTailwind CSS入門 基礎編 | アールエフェクト
+https://reffect.co.jp/html/tailwindcss-for-beginners

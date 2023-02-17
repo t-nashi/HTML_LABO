@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+html {
+  font-size: 62.5%; // 10px = 1rem
+  text-size-adjust: 100%; // スマホ横向き文字拡大対策
+}
+body {
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap");
+  font-size: 1.6rem;
+  line-height: 2.0;
+  font-family: "Noto Sans JP", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", Arial, sans-serif;
+  padding: 20px;
+}
+.title {
+  font-size: 3.2rem;
+}
+.text {
+  margin-top: 2em;
+}
+
+.tab {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    padding: 8px 12px;
+    transition: background-color .8s;
+    cursor: pointer;
+    &:hover, &:focus {
+      background-color: #ddd;
+    }
+    &.active {
+      background-color: #f7c9c9;
+    }
+  }
+}
+
+.content-vue {
+  border: 2px solid #ccc;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+}

@@ -1,0 +1,149 @@
+// ==========================================================================
+// GENERAL SETTING
+// ==========================================================================
+html {
+  font-size: 62.5%; // 10px = 1rem
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font: 1.6rem/1.7 "メイリオ", Meiryo, "Helvetica Neue", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", Arial, sans-serif;
+  // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+  // font-family: 'Noto Sans JP', sans-serif;
+  // font-size: 1.6rem;
+  // line-height: 1.7;
+  color: $color-text;
+  background-color: $color-bg-wrapper;
+}
+a {
+  @include link-colors();
+  &:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "alpha(opacity=70)";
+  }
+}
+.motion-hover {
+  &:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "alpha(opacity=70)";
+  }
+}
+b { font-weight: bold; }
+small { font-size: small; }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+// Selected Text
+::selection { background: $color-text-selection; } // Safari
+::-moz-selection { background: $color-text-selection; } // Firefox
+
+// ==========================================================================
+// STYLES
+// ==========================================================================
+
+// 共通
+// ──────────
+.d-none {
+  display: none !important;
+}
+.d-flex {
+  display: flex;
+}
+.d-block {
+  display: block;
+}
+.d-none-up-sm {
+  @include mq-up(sm) {
+    display: none !important;
+  }
+}
+.d-show-up-sm {
+  display: none !important;
+  @include mq-up(sm) {
+    display: flex !important;
+  }
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-align-center {
+  align-items: center;
+  justify-content: center;
+}
+.flex-direction-column {
+  flex-direction: column;
+}
+.w-100 {
+  width: 100%;
+}
+.box-sizing {
+  box-sizing: border-box; // paddingとborderサイズを加味したwidth/heightにする
+}
+.border-1 {
+  border: 1px solid $color-border;
+}
+.border-top-0 { border-top: none; }
+.border-right-0 { border-right: none; }
+.border-bottom-0 { border-bottom: none; }
+.border-left-0 { border-left: none; }
+
+.movie {
+  iframe {
+    width: 100%;
+    height: 240px;
+    @include mq-up(xl) {
+      height: 560px;
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.text-center {
+  text-align: center;
+}
+.text-yellow {
+  color: $color-yellow;
+}
+.text-attention {
+  color: $color-text-attention;
+}
+.text-gray {
+  color: $color-text-gray;
+}
+.text-italic {
+  font-style: italic;
+}
+.text-decoration-none {
+  text-decoration: none;
+  &:hover {
+		text-decoration: none;
+  }
+}
+.color-primary {
+  color: $color-primary !important;
+}
+.bg-transparent {
+  background-color: transparent !important;
+}
+.bg-color-inherit {
+  background-color: inherit !important;
+}
+.type-disc {
+  list-style-type: disc;
+  // padding-left: 12px;
+  // @include mq-up(xl) {
+  //   padding-left: 38px;
+  // }
+  // li + li {
+  //   margin-top: .8em;
+  // }
+}

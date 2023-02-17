@@ -1,0 +1,648 @@
+// 文字下マーカー
+.marker {
+  padding-left: .5em;
+  padding-right: .5em;
+  background: linear-gradient(transparent 60%,#F1F608 0)!important;
+}
+// 日時系文字
+.weekday,
+.date,
+.time {
+  line-height: 1;
+  font-weight: 900;
+}
+// 丸で囲われた曜日表示
+.weekday {
+  border-radius: 100vh;
+  border: solid 0.6rem $color-primary;
+  background-color: #ffffff;
+  color: $color-primary;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 1.6rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-width: 0.2rem;
+  @include mq-up(xl) {
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size: 3.6rem;
+    width: 6rem;
+    height: 6rem;
+    border-width: 0.6rem;
+  }
+}
+
+// コンテンツ共通（section）
+.contents {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.contents__inner {
+  z-index: 2;
+  width: 100%;
+  max-width: 1128px;
+  @include mq-up(xxl) {
+    max-width: 1300px;
+  }
+}
+.contents__body {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  background-color: $color-white;
+  padding: 12px 12px 24px 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  @include mq-up(md) {
+    padding: 34px 38px 48px 38px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  @include mq-up(xl) {
+    margin-left: 17px;
+    margin-right: 17px;
+  }
+  h3 {
+    margin-bottom: 1.4em;
+    color: $color-white;
+    display: inline-block;
+    font-size: 1.8rem;
+    line-height: 36px;
+    text-align: center;
+    width: 100%;
+    background-color: $color-primary;
+    border-radius: 100vh;
+    @include mq-up(xl) {
+      font-size: 3.0rem;
+      line-height: 60px;
+    }
+  }
+}
+
+// リボン - h2 - コンテンツ見出し帯
+.c-ribbon__h2 {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  color: #FFF; // フォントカラー
+  background: $color-primary; // 背景色
+  font-size: 2.0rem;
+  line-height: 1.2;
+  padding: 12px;
+  height: auto;
+  min-height: 50px;
+  z-index: 3;
+  @include flex-vh-center(); // flexで縦横中心へ寄せる
+  @include mq-up(xl) {
+    font-size: 4.8rem;
+    height: auto;
+    min-height: 80px;
+  }
+  &::before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 7px transparent;
+    border-right: solid 8px $color-primary-dark; // 折り返し部分
+    @include mq-up(xl) {
+      border-bottom: solid 15px transparent;
+      border-right: solid 17px $color-primary-dark; // 折り返し部分
+    }
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    right: 0;
+    border: none;
+    border-bottom: solid 7px transparent;
+    border-left: solid 8px $color-primary-dark; // 折り返し部分
+    @include mq-up(xl) {
+      border-bottom: solid 15px transparent;
+      border-left: solid 17px $color-primary-dark; // 折り返し部分
+    }
+  }
+  &.attention {
+    background: $color-secondary;
+    &::before {
+      border-right-color: $color-secondary-dark;
+    }
+    &::after {
+      border-left-color: $color-secondary-dark;
+    }
+  }
+}
+.contents4-sub-text {
+  @include mq-up(xl) {
+    margin-top: -16px;
+  }
+}
+
+// フチ/縁文字・袋文字
+.svg-text {
+  svg {
+    height: 3.2rem;
+    @include mq-up(xl) {
+      height: 7.8rem;
+    }
+    &.lines-2 {
+      height: 2.6rem;
+      @include mq-up(xl) {
+        height: 6.8rem;
+      }
+    }
+  }
+  text {
+    stroke            : #ffffff;
+    fill              : #ff62a1;
+    letter-spacing    : 2px;
+    text-anchor       : middle;
+    dominant-baseline : alphabetic;
+  }
+  > svg > use:nth-of-type(1),
+  span > svg > use:nth-of-type(1) {
+    stroke-width      : 5px;
+    paint-order       : stroke;
+    stroke-linejoin   : round ;
+    filter: drop-shadow(1px 2px 0px rgba(0,0,0,.4));
+    @include mq-up(xl) {
+      stroke-width      : 8px;
+      filter: drop-shadow(2px 4px 0px rgba(0,0,0,.4));
+    }
+  }
+  > svg > use:nth-of-type(2),
+  span > svg > use:nth-of-type(2) {
+    stroke-width      : 0;
+  }
+}
+
+// トップのリボンとチケットイメージ（画面外はみ出し防止）
+.contents__top {
+  overflow: hidden;
+}
+
+// トップの背景設定
+.l-main__inner {
+  position: relative;
+  // 左側装飾背景
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-image: url("../images/bg-decoration-side-l.png");
+    background-position: left top;
+    background-size: 80%;
+    @include mq-up(xl) {
+      background-size: auto;
+    }
+  }
+  // 右側装飾背景
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-image: url("../images/bg-decoration-side-r.png");
+    background-position: right top;
+    background-size: 80%;
+    @include mq-up(xl) {
+      background-size: auto;
+    }
+  }
+}
+
+// トップのメイン画像部分
+.p-hero-image {
+  width: 100%;
+  max-width: 587px;
+  // margin-bottom: 40px;
+  z-index: 5;
+  @include mq-up(xl) {
+    // margin-bottom: 140px;
+    width: inherit;
+    max-width: inherit;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    @include mq-up(xl) {
+      width: inherit;
+      margin-left: 0;
+    }
+  }
+}
+.p-explosion {
+  mix-blend-mode: overlay;
+  top: -30px;
+  width: 90%;
+  height: 90%;
+  background-repeat: no-repeat;
+  background-image: url("../images/explosion.png");
+  background-position: center top;
+  background-size: cover;
+  // background-size: 80%;
+  z-index: 3;
+  position: absolute;
+  @include mq-up(sm) {
+    top: -40px;
+    width: 600px;
+    height: 492px;
+  }
+  @include mq-up(xl) {
+    top: -60px;
+    width: 1200px;
+    height: 984px;
+    background-size: unset;
+  }
+}
+.top-date {
+  z-index: 5;
+  margin-top: 4px;
+  margin-bottom: 26px;
+  font-size: 1.4em !important;
+  @include mq-up(sm) {
+    margin-bottom: 40px;
+    font-size: 2.0em !important;
+  }
+  @include mq-up(xl) {
+    margin-top: 16px;
+    margin-bottom: 120px;
+    font-size: 1.6em !important;
+  }
+}
+
+
+// heroイメージ付近のbg装飾
+.bg-line__black--top {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  position: absolute;
+  background-color: #000;
+  height: 40px;
+  width: 100%;
+  mix-blend-mode: soft-light;
+  @include mq-up(sm) {
+    height: 48px;
+  }
+  @include mq-up(xl) {
+    height: 80px;
+  }
+}
+.bg-line__white--main {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  position: absolute;
+  background-color: #fff;
+  height: 134px;
+  width: 100%;
+  mix-blend-mode: soft-light;
+  transform: skew(0deg, -12.4deg);
+  transform-origin: right top;
+  @include mq-up(sm) {
+    height: 204px;
+  }
+  @include mq-up(xl) {
+    height: 294px;
+  }
+}
+.bg-line__white--sub {
+  top: 160px;
+  left: 0;
+  z-index: 2;
+  position: absolute;
+  background-color: #fff;
+  height: 64px;
+  width: 100%;
+  mix-blend-mode: soft-light;
+  transform: skew(0deg, -12.4deg);
+  transform-origin: right top;
+  @include mq-up(sm) {
+    top: 246px;
+    height: 98px;
+  }
+  @include mq-up(xl) {
+    top: 356px;
+    height: 178px;
+  }
+}
+
+.contents1-text {
+  font-size: 5rem;
+  margin-top: 1.2em;
+  margin-bottom: 2.2em;
+  @include mq-up(sm) {
+    margin-top: 3em;
+    margin-bottom: 4em;
+  }
+}
+
+// ピンクゴリラ画像（一番最初のコンテンツタイトル右端に配置）
+.chara-section1 {
+  position: relative;
+  width: 100%;
+  &::after {
+    @include mq-up(sm) {
+      position: absolute;
+      content: "";
+      top: -50px;
+      right: -94px;
+      bottom: 0;
+      width: 126px;
+      height: 109px;
+      background-image: url("../images/chara-section1.png");
+      background-position: top center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    @include mq-up(xl) {
+      top: -90px;
+      right: -220px;
+      width: 252px;
+      height: 218px;
+    }
+  }
+}
+
+// グリーンゴリラ画像（キャンペーン①のマーカー文字右横に配置）
+.chara-campaign1 {
+  position: relative;
+  width: 100%;
+  &::after {
+    @include mq-up(sm) {
+      position: absolute;
+      content: "";
+      top: -28px;
+      right: -72px;
+      bottom: 0;
+      width: 100px;
+      height: 87px;
+      background-image: url("../images/chara-section1.png");
+      background-position: top center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    @include mq-up(xl) {
+      top: -40px;
+      right: -130px;
+      width: 194px;
+      height: 168px;
+    }
+  }
+}
+
+// ブルーゴリラ画像（事前登録ボタン右端に配置）
+.chara-big-btn {
+  position: relative;
+  width: 100%;
+  &::after {
+    @include mq-up(sm) {
+      position: absolute;
+      content: "";
+      top: -40px;
+      right: -120px;
+      bottom: 0;
+      width: 100px;
+      height: 87px;
+      background-image: url("../images/chara-big-btn.png");
+      background-position: top center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    @include mq-up(xl) {
+      top: -90px;
+      right: -260px;
+      width: 212px;
+      height: 184px;
+    }
+  }
+}
+
+// 景品画像等
+.list-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -32px 0 0 -8px;
+  @include mq-up(md) {
+    margin: -48px 0 0 -16px;
+  }
+  .item {
+    margin: 32px 0 0 8px;
+    @include mq-up(md) {
+      margin: 48px 0 0 16px;
+    }
+  }
+  li {
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    @include mq-up(md) {
+      width: 33.33%;
+    }
+  }
+  figure {
+    position: relative;
+    width: 100%;
+    padding-top: 66.6666%;
+    // border: solid 1px #AAAAAA;
+    border-radius: 3px;
+    border: solid 2px #51B3E4;
+    overflow: hidden;
+    @include mq-up(xl) {
+      border-radius: 6px;
+      border-width: 5px;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: auto;
+      height: 100%;
+      border-radius: 1px;
+      @include mq-up(xl) {
+        border-radius: 5px;
+      }
+    }
+  }
+  p {
+    font-weight: normal;
+    margin-top: 4px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    @include mq-up(xl) {
+      margin-top: 8px;
+      font-size: 2.0rem;
+      line-height: 1.7;
+    }
+  }
+}
+
+// 色付き背景コンテンツ
+.bg-color__whole {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -25%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    background-repeat: repeat-y;
+    background-image: url("../images/bg-fireworks-side-l.png");
+    background-position: right top;
+    background-size: 100%;
+    opacity: .7;
+    @include mq-up(xl) {
+      background-size: auto;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -25%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    background-repeat: repeat-y;
+    background-image: url("../images/bg-fireworks-side-r.png");
+    background-position: left top;
+    background-size: 100%;
+    opacity: .7;
+    @include mq-up(xl) {
+      background-size: auto;
+    }
+  }
+  .contents.bg-color {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 44px;
+    @include mq-up(xl) {
+      padding-bottom: 88px !important;
+    }
+  }
+}
+.bg-color {
+  background-image: url("../images/bg-pattern__body.png");
+  background-position: top center;
+  background-size: 24%;
+  background-color: $color-white;
+}
+
+// Twitterのツイート埋め込み用
+.twitter-tweet {
+  display: flex;
+  max-width: 550px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  @include mx-auto();
+}
+
+// フッター
+// ──────────
+.l-footer {
+  background: url("../images/bg-pattern__parts.png"), linear-gradient(
+    140deg,
+    #EE8F16,
+    #FFA71B 40%,
+    #FFCC66 50%,
+    #E93588 65%
+  );
+  &__inner {
+    text-align: center;
+    min-height: 80px;
+    @include flex-vh-center(); // flexで縦横中心へ寄せる
+    flex-direction: column;
+    justify-content: normal;
+    @include mq-up(xl) {
+      min-height: 160px;
+    }
+    h2 {
+      @include flex-vh-center(); // flexで縦横中心へ寄せる
+      min-height: 50px;
+      background-color: $color-primary;
+      width: 100%;
+      color: $color-white;
+      @include mq-up(xl) {
+        min-height: 80px;
+      }
+    }
+  }
+  .c-copyright {
+    color: $color-white;
+    font-size: 1.2rem;
+    font-weight: normal;
+    @include mq-up(xl) {
+      font-size: 1.8rem;
+    }
+  }
+}
+.p-logo__footer {
+  img {
+    max-width: 120px;
+    @include mq-up(sm) {
+      max-width: 168px;
+    }
+  }
+}
+.p-app-banner {
+  display: flex;
+  @include flex-vh-center();
+  li + li {
+    margin-left: 4px;
+    @include mq-up(xl) {
+      margin-left: 8px;
+    }
+  }
+  a {
+    display: flex;
+    @include flex-vh-center();
+  }
+  .ios {
+    img {
+      display: block;
+      height: 34px;
+      max-height: 42px;
+      @include mq-up(sm) {
+        height: auto;
+      }
+    }
+  }
+  .android {
+    img {
+      display: block;
+      height: 34px;
+      max-height: 42px;
+      @include mq-up(sm) {
+        height: auto;
+      }
+    }
+  }
+}

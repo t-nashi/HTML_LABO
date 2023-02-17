@@ -1,0 +1,129 @@
+// ==========================================================================
+// UTILITY
+// ==========================================================================
+// [px] padding, margin
+.mt-0 { margin-top: 0px; }
+.mr-0 { margin-right: 0px; }
+.mb-0 { margin-bottom: 0px; }
+.ml-0 { margin-left: 0px; }
+
+.pt-0 { padding-top: 0px; }
+.pr-0 { padding-right: 0px; }
+.pb-0 { padding-bottom: 0px; }
+.pl-0 { padding-left: 0px; }
+
+@for $i from 0 through 12 {
+  $j: ($i*5);
+  @include responsive('.pt','#{$j}px') { padding-top: #{$j}px !important; }
+  @include responsive('.pb','#{$j}px') { padding-bottom: #{$j}px !important; }
+  @include responsive('.pl','#{$j}px') { padding-left: #{$j}px !important; }
+  @include responsive('.pr','#{$j}px') { padding-right: #{$j}px !important; }
+  @include responsive('.mt','#{$j}px') { margin-top: #{$j}px !important; }
+  @include responsive('.mb','#{$j}px') { margin-bottom: #{$j}px !important; }
+  @include responsive('.ml','#{$j}px') { margin-left: #{$j}px !important; }
+  @include responsive('.mr','#{$j}px') { margin-right: #{$j}px !important; }
+}
+
+// [em] padding, margin
+@for $i from 1 through 5 {
+  @include responsive('.pt','#{$i}em') { padding-top: #{$i}em !important; }
+  @include responsive('.pb','#{$i}em') { padding-bottom: #{$i}em !important; }
+  @include responsive('.pl','#{$i}em') { padding-left: #{$i}em !important; }
+  @include responsive('.pr','#{$i}em') { padding-right: #{$i}em !important; }
+  @include responsive('.mt','#{$i}em') { margin-top: #{$i}em !important; }
+  @include responsive('.mb','#{$i}em') { margin-bottom: #{$i}em !important; }
+  @include responsive('.ml','#{$i}em') { margin-left: #{$i}em !important; }
+  @include responsive('.mr','#{$i}em') { margin-right: #{$i}em !important; }
+}
+
+.mt-auto { margin-top: auto !important; }
+.mr-auto { margin-right: auto !important; }
+.mb-auto { margin-bottom: auto !important; }
+.ml-auto { margin-left: auto !important; }
+
+.pt-point5em {
+  padding-left: .5em;
+}
+.pt-1-6em {
+  padding-top: 1.6em;
+}
+
+.line-height-1 {
+  line-height: 1;
+}
+.leading-3 { line-height: .75rem; }
+.leading-4 { line-height: 1rem; }
+.leading-5 { line-height: 1.25rem; }
+.leading-6 { line-height: 1.5rem; }
+.leading-7 { line-height: 1.75rem; }
+.leading-8 { line-height: 2rem; }
+.leading-9 { line-height: 2.25rem; }
+.leading-10 { line-height: 2.5rem; }
+.leading-none { line-height: 1; }
+.leading-tight { line-height: 1.25; }
+.leading-snug { line-height: 1.375; }
+.leading-normal { line-height: 1.5; }
+.leading-relaxed { line-height: 1.625; }
+.leading-loose { line-height: 2; }
+
+
+
+
+
+
+
+
+// // font-size
+// @for $i from 1 through 60 {
+//   $j: ($i/10);
+//   .b-#{$i} { font-size: #{$j}rem !important; }
+// }
+
+// // $breakpoints: 'ss', 'sg', 'sm', 'md', 'lg', 'xl', 'xxl';
+// $down-size: '90', '80', '70', '60', '50';
+
+// .u-fs-100 { font-size: 100% !important; }
+
+// @for $i from 1 through 5 {
+//   // 例）.u-fs-down-1 { font-size: 90% !important; }
+//   .u-fs-down-#{$i} { font-size: #{nth($down-size, $i)+"%"} !important; }
+// }
+// @for $i from 1 through 5 {
+//   // 例）.u-fs-up-1 { font-size: 110% !important; }
+//   .u-fs-up-#{$i} { font-size: #{"1"+$i+"0%"} !important; }
+// }
+
+// @each $bp, $mq in $breakpoint-up {
+//   // $index_key: index($breakpoints, $bp);
+//   // フォントサイズダウン（パーセント）
+//   @for $i from 1 through 5 {
+//     // 例）.u-fs-down-xl-1 { font-size: 90% !important; }
+//     .u-fs-down-#{$bp}-#{$i} {
+//       @include mq-up(#{$bp}) {
+//         font-size: #{nth($down-size, $i)+"%"} !important;
+//       }
+//     }
+//   }
+//   // フォントサイズアップ（パーセント）
+//   @for $i from 1 through 5 {
+//     // 例）.u-fs-up-xl-1 { font-size: 110% !important; }
+//     .u-fs-up-#{$bp}-#{$i} {
+//       @include mq-up(#{$bp}) {
+//         font-size: #{"1"+$i+"0%"} !important;
+//       }
+//     }
+//   }
+// }
+
+// @each $bp, $mq in $breakpoint-up {
+//   // 例）.u-fs-xl-100 { font-size: 100% !important; }
+//   .u-fs-#{$bp}-100 {
+//     @include mq-up(#{$bp}) {
+//       font-size: 100% !important;
+//     }
+//   }
+// }
+
+
+
+
