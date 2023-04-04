@@ -1,0 +1,23 @@
+@use "../global" as *;
+
+.l-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  &__inner {
+    background-color: #0003;
+    height: 100%;
+    width: 100%;
+    max-width: $max-width-pc;
+    display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    @include mq-up(md) {
+      grid-template-columns: 1fr minmax(auto, 200px);
+    }
+  }
+}

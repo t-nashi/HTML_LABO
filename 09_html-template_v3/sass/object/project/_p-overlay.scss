@@ -1,0 +1,46 @@
+@use "../../global" as *;
+
+.p-overlay__nav {
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  transition: all .3s;
+  background-color: #fffe;
+  &.is-active {
+    opacity: 1;
+    z-index: 999;
+    pointer-events: all;
+  }
+  & > ul {
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    li {
+      list-style: none;
+      text-align: center;
+      color: #333;
+      letter-spacing: .1em;
+      font-size: 1.6rem;
+      @include mq-up(md) {
+        font-size: 2.0rem;
+      }
+      a {
+        padding: 10px;
+        display: block;
+        text-transform: uppercase;
+        color: #333;
+        text-decoration: none;
+        outline: none;
+        &:visited {
+          color: #333;
+        }
+      }
+    }
+  }
+}
