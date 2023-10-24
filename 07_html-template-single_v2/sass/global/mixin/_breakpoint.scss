@@ -1,0 +1,44 @@
+// width
+$bp-width-ss: 340px;
+$bp-width-sg: 360px;
+$bp-width-sm: 576px;
+$bp-width-md: 768px;
+$bp-width-lg: 992px;
+$bp-width-xl: 1200px;
+$bp-width-xxl: 1400px;
+
+// min-width
+$breakpoint-up: (
+  'ss': 'screen and (min-width: #{$bp-width-ss})',
+  'sg': 'screen and (min-width: #{$bp-width-sg})',
+  'sm': 'screen and (min-width: #{$bp-width-sm})',
+  'md': 'screen and (min-width: #{$bp-width-md})',
+  'lg': 'screen and (min-width: #{$bp-width-lg})',
+  'xl': 'screen and (min-width: #{$bp-width-xl})',
+  'xxl': 'screen and (min-width: #{$bp-width-xxl})',
+) !default;
+
+// max-width
+$breakpoint-down: (
+  'ss': 'screen and (max-width: #{(($bp-width-ss)-1)})',
+  'sg': 'screen and (max-width: #{(($bp-width-sg)-1)})',
+  'sm': 'screen and (max-width: #{(($bp-width-sm)-1)})',
+  'md': 'screen and (max-width: #{(($bp-width-md)-1)})',
+  'lg': 'screen and (max-width: #{(($bp-width-lg)-1)})',
+  'xl': 'screen and (max-width: #{(($bp-width-xl)-1)})',
+  'xxl': 'screen and (max-width: #{(($bp-width-xxl)-1)})',
+) !default;
+
+// breakpoint-up ※基本こちらをベースとして採用（モバイルファーストstyle（Bootstrap方式））
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+// breakpoint-down
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
